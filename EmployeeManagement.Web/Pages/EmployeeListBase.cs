@@ -15,6 +15,8 @@ namespace EmployeeManagement.Web.Pages
         public IEmployeeService employeeService { get; set; }
         public IEnumerable<Employee> Employees { get; set; }
 
+        public bool ShowFooter { get; set; } = true;
+
         protected override async Task OnInitializedAsync()
         {
             // await Task.Run(LoadEmployees);
