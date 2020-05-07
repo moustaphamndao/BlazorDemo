@@ -5,9 +5,10 @@
 
         @if (ShowHeader)
         {
-            <div class="card-header">
-                <h3>@Employee.FirstName  @Employee.LastName</h3>
-            </div>
+        <div class="card-header">
+            <input type="checkbox" @onchange="CheckBoxChanged" />
+            <h3>@Employee.FirstName  @Employee.LastName</h3>
+        </div>
         }
 
 

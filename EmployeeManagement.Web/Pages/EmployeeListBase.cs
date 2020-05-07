@@ -14,15 +14,26 @@ namespace EmployeeManagement.Web.Pages
         [Inject]
         public IEmployeeService employeeService { get; set; }
         public IEnumerable<Employee> Employees { get; set; }
-
         public bool ShowFooter { get; set; } = true;
-
         public bool ShowHeader { get; set; } = true;
 
         protected override async Task OnInitializedAsync()
         {
             // await Task.Run(LoadEmployees);
             Employees = (await employeeService.GetEmployees()).ToList();
+        }
+
+        protected int SelectedEmployeesCount { get; set; } = 0;
+        protected void EmployeeSelectionChanged(bool isSelected)
+        {
+            if (isSelected)
+            {
+                SelectedEmployeesCount++;
+            }
+            else
+            {
+                SelectedEmployeesCount--;
+            }
         }
 
         // The hard coded data is no longer used to populate the client but real datas (from the DataBase)

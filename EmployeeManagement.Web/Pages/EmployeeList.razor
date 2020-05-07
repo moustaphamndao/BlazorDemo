@@ -1,7 +1,7 @@
 ﻿@page "/"
 @inherits EmployeeListBase
 
-<h3>Employee List</h3>
+<h3>Selected Employees Count - @SelectedEmployeesCount </h3>
 <input type="checkbox" id="showHeader" @bind="ShowHeader" />
 <label for="showHeader">Show Header</label>
 <br />
@@ -18,7 +18,8 @@ else
     <div class="card-deck">
         @foreach (var employee in Employees)
         {
-            <DisplayEmployee Employee="employee" ShowFooter="ShowFooter" ShowHeader="ShowHeader"></DisplayEmployee>
+            <DisplayEmployee Employee="employee" ShowFooter="ShowFooter" ShowHeader="ShowHeader" 
+                             OnEmployeeSelection="EmployeeSelectionChanged"></DisplayEmployee>
         }
     </div>
 }
