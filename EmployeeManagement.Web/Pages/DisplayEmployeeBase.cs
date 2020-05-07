@@ -14,5 +14,8 @@ namespace EmployeeManagement.Web.Pages
 
         [Parameter]
         public bool ShowFooter { get; set; }
+
+        [Parameter]
+        public bool ShowHeader { get; set; }
     }
 }

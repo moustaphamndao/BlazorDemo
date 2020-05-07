@@ -2,16 +2,23 @@
 @inherits EmployeeListBase
 
 <h3>Employee List</h3>
-@if(Employees == null)
-{
-<div class="spinner"></div>
-}
-else{
+<input type="checkbox" id="showHeader" @bind="ShowHeader" />
+<label for="showHeader">Show Header</label>
+<br />
+<input type="checkbox" id="showFooter" @bind="ShowFooter" />
+<label for="showFooter">Show Footer</label>
 
-<div class="card-deck">
-    @foreach (var employee in Employees)
-    {
-       <DisplayEmployee Employee="employee" ShowFooter="ShowFooter"></DisplayEmployee>
-    }
-</div>
+@if (Employees == null)
+{
+    <div class="spinner"></div>
+}
+else
+{
+
+    <div class="card-deck">
+        @foreach (var employee in Employees)
+        {
+            <DisplayEmployee Employee="employee" ShowFooter="ShowFooter" ShowHeader="ShowHeader"></DisplayEmployee>
+        }
+    </div>
 }

@@ -17,6 +17,8 @@ namespace EmployeeManagement.Web.Pages
 
         public bool ShowFooter { get; set; } = true;
 
+        public bool ShowHeader { get; set; } = true;
+
         protected override async Task OnInitializedAsync()
         {
             // await Task.Run(LoadEmployees);
