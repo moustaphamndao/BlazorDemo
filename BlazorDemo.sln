@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagement.Web", "E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagement.Api", "EmployeeManagement.Api\EmployeeManagement.Api.csproj", "{655754D9-AC9F-4026-9579-1D88328DDE99}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ndawene.Components", "Ndawene.Components\Ndawene.Components.csproj", "{6CDE7B0A-A62B-42A2-B55A-2771F861BE31}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{655754D9-AC9F-4026-9579-1D88328DDE99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{655754D9-AC9F-4026-9579-1D88328DDE99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{655754D9-AC9F-4026-9579-1D88328DDE99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CDE7B0A-A62B-42A2-B55A-2771F861BE31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CDE7B0A-A62B-42A2-B55A-2771F861BE31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CDE7B0A-A62B-42A2-B55A-2771F861BE31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CDE7B0A-A62B-42A2-B55A-2771F861BE31}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

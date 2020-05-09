@@ -338,3 +338,7 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/Ndawene.Components/wwwroot
+/Ndawene.Components/ExampleJsInterop.cs
+/Ndawene.Components/_Imports.razor
+/Ndawene.Components/Component1.razor
