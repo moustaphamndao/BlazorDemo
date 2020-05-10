@@ -41,5 +41,10 @@ namespace EmployeeManagement.Web.Pages
             EditEmployeeModel.Department = Employee.Department;
             
         }
+
+        protected void HandleValidSubmit()
+        {
+
+        }
     }
 }
