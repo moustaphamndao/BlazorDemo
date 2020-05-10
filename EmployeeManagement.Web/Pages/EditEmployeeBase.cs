@@ -1,4 +1,5 @@
-﻿using EmployeeManagement.Models;
+﻿using AutoMapper;
+using EmployeeManagement.Models;
 using EmployeeManagement.Web.Models;
 using EmployeeManagement.Web.Services;
 using Microsoft.AspNetCore.Components;
@@ -24,21 +25,27 @@ namespace EmployeeManagement.Web.Pages
         [Parameter]
         public string Id { get; set; }
 
+        [Inject]
+        public IMapper Mapper { get; set; }
+
         protected async override  Task OnInitializedAsync()
         {
             Employee = await employeeService.GetEmployee(int.Parse(Id));
             Departmnents = (await departmentService.GetDepartments()).ToList();
 
-            EditEmployeeModel.EmployeeId = Employee.EmployeeId;
-            EditEmployeeModel.FirstName = Employee.FirstName;
-            EditEmployeeModel.LastName = Employee.LastName;
-            EditEmployeeModel.Email = Employee.Email;
-            EditEmployeeModel.ConfirmEmail = Employee.Email;
-            EditEmployeeModel.DateOfBrith = Employee.DateOfBrith;
-            EditEmployeeModel.Gender = Employee.Gender;
-            EditEmployeeModel.PhotoPath = Employee.PhotoPath;
-            EditEmployeeModel.DepartmentId = Employee.DepartmentId;
-            EditEmployeeModel.Department = Employee.Department;
+            Mapper.Map(Employee, EditEmployeeModel);
+
+            //This code is now replaced by the mapping (AutoMapper)
+            //EditEmployeeModel.EmployeeId = Employee.EmployeeId;
+            //EditEmployeeModel.FirstName = Employee.FirstName;
+            //EditEmployeeModel.LastName = Employee.LastName;
+            //EditEmployeeModel.Email = Employee.Email;
+            //EditEmployeeModel.ConfirmEmail = Employee.Email;
+            //EditEmployeeModel.DateOfBrith = Employee.DateOfBrith;
+            //EditEmployeeModel.Gender = Employee.Gender;
+            //EditEmployeeModel.PhotoPath = Employee.PhotoPath;
+            //EditEmployeeModel.DepartmentId = Employee.DepartmentId;
+            //EditEmployeeModel.Department = Employee.Department;
             
         }
 
