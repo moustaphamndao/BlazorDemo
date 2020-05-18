@@ -62,7 +62,7 @@ namespace EmployeeManagement.Api.Controllers
                     return BadRequest();
                 }
                 //Verify if the employee does not already exist before creating it
-                var emp = employeeRepository.GetEmployeeByEmail(employee.Email);
+                var emp = await employeeRepository.GetEmployeeByEmail(employee.Email);
 
                 if (emp != null)
                 {

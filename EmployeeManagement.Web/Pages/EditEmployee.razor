@@ -1,11 +1,12 @@
 ﻿@page "/editemployee/{id}"
+@page "/editemployee"
 
 @inherits EditEmployeeBase
 
 
     <EditForm Model="@EditEmployeeModel" OnValidSubmit="HandleValidSubmit">
         <ObjectGraphDataAnnotationsValidator />
-        <h3>Edit Employee</h3>
+        <h3>@PageTitle</h3>
         <hr />
         <ValidationSummary />
         <div class="form-group row">
@@ -83,8 +84,10 @@
                 <InputDate class="form-control" @bind-Value="EditEmployeeModel.DateOfBrith" />
             </div>
         </div>
-
+        @*
         <div class="form-group row">
+         Updating Department Name from this page does not make sense
+        This is only here to demonstrate complex model validation
             <label for="departmentName" class="col-sm-2 col-form-label">
                 Department Name
             </label>
@@ -92,9 +95,8 @@
                 <InputText class="form-control" @bind-Value="EditEmployeeModel.Department.DepartmentName" />
                 <ValidationMessage For="@(() => EditEmployeeModel.Department.DepartmentName)" />
             </div>
-        </div>
+        </div>*@
 
         <button class="btn btn-primary" type="submit">Save</button>
     </EditForm>
 
-   
