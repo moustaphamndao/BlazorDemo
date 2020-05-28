@@ -90,5 +90,11 @@ namespace EmployeeManagement.Web.Pages
             }
            
         }
+
+        protected async Task Delete_Click()
+        {
+            await employeeService.DeleteEmployee(Employee.EmployeeId);
+            NavigationManager.NavigateTo("/");
+        }
     }
 }

@@ -13,12 +13,12 @@
             </NavLink>
         </li>
         <li class="nav-item px-3">
-            <NavLink class="nav-link" href="/editemployee" @onclick="HandleClick" Match="NavLinkMatch.All">
+            <NavLink class="nav-link" href="/editemployee" @onclick="HandleClickCreate" Match="NavLinkMatch.All">
                 <span class="oi oi-file" aria-hidden="true"></span> Create
             </NavLink>
         </li>
         <li class="nav-item px-3">
-            <NavLink class="nav-link" href="/editemployee/1" Match="NavLinkMatch.All">
+            <NavLink class="nav-link" href="/editemployee/1" @onclick="HandleClickEdit" Match="NavLinkMatch.All">
                 <span class="oi oi-pencil" aria-hidden="true"></span> Edit
             </NavLink>
         </li>
@@ -33,9 +33,14 @@
     [Inject]
     public NavigationManager NavigationManager { get; set; }
 
-    private void HandleClick()
+    private void HandleClickCreate()
     {
         NavigationManager.NavigateTo("editemployee", true); //bypass client side routing and force the server to load the component
+    }
+
+    private void HandleClickEdit()
+    {
+        NavigationManager.NavigateTo("editemployee/1", true); 
     }
 
     private void ToggleNavMenu()

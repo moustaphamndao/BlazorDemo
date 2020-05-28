@@ -36,6 +36,11 @@ namespace EmployeeManagement.Web.Pages
             }
         }
 
+        protected async Task EmployeeDeleted()
+        {
+            Employees = (await employeeService.GetEmployees()).ToList();
+        }
+
         // The hard coded data is no longer used to populate the client but real datas (from the DataBase)
         private void LoadEmployees()
         {
