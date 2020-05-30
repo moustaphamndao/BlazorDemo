@@ -90,11 +90,19 @@ namespace EmployeeManagement.Web.Pages
             }
            
         }
-
-        protected async Task Delete_Click()
+        protected Ndawene.Components.ConfirmationBase DeleteConfirmation { get; set; }
+        protected void Delete_Click()
         {
-            await employeeService.DeleteEmployee(Employee.EmployeeId);
-            NavigationManager.NavigateTo("/");
+            DeleteConfirmation.Show();
+
+        }
+        protected async Task ConfirmDelete_Click(bool deleteConfirmed)
+        {
+            if (deleteConfirmed)
+            {
+                await employeeService.DeleteEmployee(Employee.EmployeeId);
+                NavigationManager.NavigateTo("/");
+            }
         }
     }
 }

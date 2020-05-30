@@ -106,3 +106,7 @@
         }
     </EditForm>
 
+    <Confirmation ConfirmationChanged="ConfirmDelete_Click" @ref="DeleteConfirmation"
+                  ConfirmationMessage=@($"Are you sure you want to delete {EditEmployeeModel.FirstName} {EditEmployeeModel.LastName} ?")>
+    </Confirmation>
+

@@ -36,10 +36,22 @@ namespace EmployeeManagement.Web.Pages
 
         [Inject]
         public NavigationManager NavigationManager { get; set; }
-        protected async Task Delete_Click()
+
+        protected Ndawene.Components.ConfirmationBase DeleteConfirmation { get; set; }
+        protected void Delete_Click()
         {
-            await employeeService.DeleteEmployee(Employee.EmployeeId);
-            await OnEmployeeDeleted.InvokeAsync(Employee.EmployeeId);
+            DeleteConfirmation.Show();
+            
         }
+
+        protected async Task ConfirmDelete_Click(bool deleteConfirmed)
+        {
+            if (deleteConfirmed)
+            {
+                await employeeService.DeleteEmployee(Employee.EmployeeId);
+                await OnEmployeeDeleted.InvokeAsync(Employee.EmployeeId);
+            }
+        }
+
     }
 }
