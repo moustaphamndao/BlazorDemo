@@ -14,11 +14,11 @@
 }
 else
 {
-    //Adding some commentary to check if the user change
+
     <div class="card-deck">
         @foreach (var employee in Employees)
         {
-            <DisplayEmployee Employee="employee" ShowFooter="ShowFooter" ShowHeader="ShowHeader" 
+            <DisplayEmployee Employee="employee" ShowFooter="ShowFooter" ShowHeader="ShowHeader"
                              OnEmployeeSelection="EmployeeSelectionChanged"
                              OnEmployeeDeleted="EmployeeDeleted"></DisplayEmployee>
         }
