@@ -34,12 +34,29 @@ namespace EmployeeManagement.Api
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 
             services.AddControllers();
+            services.AddSwaggerGen();
+            //services.AddSwaggerGen(setupAction =>
+            //{
+            //    setupAction.SwaggerDoc(
+            //        "EmployeeApiSpecification", new Microsoft.OpenApi.Models.OpenApiInfo()
+            //        {
+            //            Title = "Employee API",
+            //            Version = "1"
+            //        });
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
+            app.UseSwagger();
+            app.UseSwaggerUI(setupAction =>
+                {
+                    setupAction.SwaggerEndpoint(
+                        "/swagger/v1/swagger.json", "Employee API V1");
+                });
+
+            if (!env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }

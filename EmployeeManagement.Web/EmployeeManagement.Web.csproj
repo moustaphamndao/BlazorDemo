@@ -5,6 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\Identity\Pages\Account\**" />
+    <Compile Remove="Migrations\**" />
+    <Content Remove="Areas\Identity\Pages\Account\**" />
+    <Content Remove="Migrations\**" />
+    <EmbeddedResource Remove="Areas\Identity\Pages\Account\**" />
+    <EmbeddedResource Remove="Migrations\**" />
+    <None Remove="Areas\Identity\Pages\Account\**" />
+    <None Remove="Migrations\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Blazor.HttpClient" Version="3.2.0-preview3.20168.3" />
     <PackageReference Include="Microsoft.AspNetCore.Components.DataAnnotations.Validation" Version="3.2.0-rc1.20223.4" />

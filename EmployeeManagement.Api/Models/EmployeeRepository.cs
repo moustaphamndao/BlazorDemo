@@ -26,6 +26,7 @@ namespace EmployeeManagement.Api.Models
         {
             return await appDbContext.Employees
                 .Include(e => e.Department)
+
                 .FirstOrDefaultAsync(e => e.EmployeeId == employeeId);
         }
 
